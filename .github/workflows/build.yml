@@ -4,12 +4,29 @@ on: [push]
 
 jobs:
   build:
-
-    runs-on: [windows-latest]
+    name: build
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [windows-latest, ubuntu-latest] #macOS-latest
+    #runs-on: [windows-latest]
        
     steps:
-     - uses: actions/checkout@master
-     - uses: actions/setup-dotnet@v1
-       with:
-         dotnet-version: '3.1.100' # SDK Version to use.
-     - run: dotnet build src/ConfluenceCloudExportPermission.sln
+
+      - name: Checkout
+      - uses: actions/checkout@master
+
+
+      - name: Setup dotnet env
+      - uses: actions/setup-dotnet@v1
+        with:
+            dotnet-version: '3.1.100' # SDK Version to use.
+      - run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
+
+
+      - name: test
+      - uses: actions/setup-dotnet@v1
+        with:
+            dotnet-version: '3.1.100' # SDK Version to use.
+      #- run: dotnet test --verbosity normal src/ConfluenceCloudExportPermission.sln
+        
