@@ -16,7 +16,7 @@ namespace ConfluenceCloudExportPermissionLib.Test
         [Fact]
         public void TestTestMehodFalse()
         {
-            Assert.False(!new ExportZipFile().TestMethod());
+            Assert.False(new ExportZipFile().TestMethod());
             
         }
     }
