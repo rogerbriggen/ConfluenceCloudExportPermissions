@@ -3,4 +3,4 @@ Manage permission of a Atlassian Confluence Backup (so you can view them or chan
 
 | Windows       | Linux |
 | ------------- | ------|
-| ![CI](https://github.com/rogerbriggen/ConfluenceCloudExportPermissions/workflows/CI/badge.svg)     | ![CI](https://github.com/rogerbriggen/ConfluenceCloudExportPermissions/workflows/CI/badge.svg) |
+| ![CI](https://github.com/rogerbriggen/ConfluenceCloudExportPermissions/workflows/CI/badge.svg?event=push)     | ![CI](https://github.com/rogerbriggen/ConfluenceCloudExportPermissions/workflows/CI/badge.svg?event=push) |
