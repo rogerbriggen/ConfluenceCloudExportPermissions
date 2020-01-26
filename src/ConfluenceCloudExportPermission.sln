@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfluenceCloudExportPermissionLib", "ConfluenceCloudExportPermissionLib\ConfluenceCloudExportPermissionLib.csproj", "{3EE74A83-6C78-4D95-B9DE-7932B22BD6CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfluenceCloudExportPermissionLib", "ConfluenceCloudExportPermissionLib\ConfluenceCloudExportPermissionLib.csproj", "{3EE74A83-6C78-4D95-B9DE-7932B22BD6CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfluenceCloudExportPermissionLib.Test", "ConfluenceCloudExportPermissionLib.Test\ConfluenceCloudExportPermissionLib.Test.csproj", "{E59C98C8-816B-4268-B01D-DC532982F8A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3EE74A83-6C78-4D95-B9DE-7932B22BD6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EE74A83-6C78-4D95-B9DE-7932B22BD6CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EE74A83-6C78-4D95-B9DE-7932B22BD6CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59C98C8-816B-4268-B01D-DC532982F8A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59C98C8-816B-4268-B01D-DC532982F8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59C98C8-816B-4268-B01D-DC532982F8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59C98C8-816B-4268-B01D-DC532982F8A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
