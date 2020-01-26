@@ -1,2 +1,2 @@
-# conf_import_permission
-Change the permission in the backup before importing it in Atlassian Confluence Cloud
+# ConfluenceChangeImportPermission
+Manage permission of a Atlassian Confluence Backup (so you can view them or change them before reimporting it)
