@@ -12,6 +12,7 @@ namespace ConfluenceCloudExportPermissionLib
             _logger = logger;
         }
 
+
         public bool TestMethod()
         {
             _logger.LogDebug("TestMethod");
