@@ -29,8 +29,11 @@ jobs:
       - name: Build projects
         uses: actions/setup-dotnet@v1
         with:
-            dotnet-version: $USE_DOTNET-VERSION # SDK Version to use.
+            dotnet-version: ${{ env.USE_DOTNET-VERSION }} # SDK Version to use.
       - run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
+
+      - name: Run unit-tests
+        run: dotnet version
 
 
       - name: Run unit-tests
