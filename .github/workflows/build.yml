@@ -5,6 +5,7 @@ on: [push]
 jobs:
   build:
     name: build
+    #env: INPUT_DOTNET-VERSION: '3.1.100'
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
@@ -26,6 +27,8 @@ jobs:
 
 
       - name: Run unit-tests
+        with:
+            dotnet-version: '3.1.100' # SDK Version to use.
         run: dotnet test --verbosity normal src/
       #- run: dotnet test --verbosity normal src/ConfluenceCloudExportPermission.sln
 
@@ -40,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
             name: RemoteIncrediBuild_Release_Win-x64
-            path: ConfluenceCloudExportPermission\bin\Release\netcoreapp3.1\win-x64\publish\
+            path: src\ConfluenceCloudExportPermission\bin\Release\netcoreapp3.1\win-x64\publish\
