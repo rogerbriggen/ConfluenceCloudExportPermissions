@@ -7,6 +7,7 @@ jobs:
     name: build
     env: 
      USE_DOTNET-VERSION: '3.1.100'
+     INPUT_DOTNET-VERSION: '3.1.100'
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
@@ -29,7 +30,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
             dotnet-version: $USE_DOTNET-VERSION # SDK Version to use.
-        run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
+      - run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
 
 
       - name: Run unit-tests
