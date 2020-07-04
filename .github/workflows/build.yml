@@ -21,8 +21,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
             dotnet-version: '3.1.100' # SDK Version to use.
-
-
       - name: Build projects
         run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
 
@@ -34,7 +32,7 @@ jobs:
 
       - name: Publish for Win-x64 as SingleFile
         if: runner.os == 'Windows'
-        run: dotnet publish --configuration Release --runtime win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true ConfluenceCloudExportPermission/ConfluenceCloudExportPermission.csproj
+        run: dotnet publish --configuration Release --runtime win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true src/ConfluenceCloudExportPermission/ConfluenceCloudExportPermission.csproj
 
 
       - name: Upload artifact
