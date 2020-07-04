@@ -17,17 +17,17 @@ jobs:
         uses: actions/checkout@master
 
 
-      - name: Setup dotnet env and build
+      - name: Setup dotnet env
         uses: actions/setup-dotnet@v1
         with:
             dotnet-version: '3.1.100' # SDK Version to use.
-      - run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
 
 
-      - name: Setup dotnet env and test
-        uses: actions/setup-dotnet@v1
-        with:
-            dotnet-version: '3.1.100' # SDK Version to use.
-      - run: dotnet test --verbosity normal src/
+      - name: Build projects
+        run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
+
+
+      - name: Run unit-tests
+        run: dotnet test --verbosity normal src/
       #- run: dotnet test --verbosity normal src/ConfluenceCloudExportPermission.sln
         
