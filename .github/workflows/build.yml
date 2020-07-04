@@ -30,4 +30,18 @@ jobs:
       - name: Run unit-tests
         run: dotnet test --verbosity normal src/
       #- run: dotnet test --verbosity normal src/ConfluenceCloudExportPermission.sln
-        
+
+  publish:
+    name: publish
+    runs-on: [windows-latest]
+    steps:
+
+      - name: Publish for Win-x64 as SingleFile
+        run: dotnet publish --configuration Release --runtime win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true ConfluenceCloudExportPermission/ConfluenceCloudExportPermission.csproj
+
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+            name: RemoteIncrediBuild_Release_x64
+            path: ConfluenceCloudExportPermission\bin\Release\netcoreapp3.1\win-x64\publish\
