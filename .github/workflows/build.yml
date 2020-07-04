@@ -6,8 +6,7 @@ jobs:
   build:
     name: build
     env: 
-     INPUT_DOTNET-VERSION: '3.1.100'
-     DOTNET-VERSION: '3.1.200'
+     USE_DOTNET-VERSION: '3.1.100'
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
@@ -22,9 +21,14 @@ jobs:
 
       - name: Setup dotnet env
         uses: actions/setup-dotnet@v1
-        #with:
-        #    dotnet-version: '3.1.100' # SDK Version to use.
+        with:
+            dotnet-version: $USE_DOTNET-VERSION # SDK Version to use.
+
+
       - name: Build projects
+        uses: actions/setup-dotnet@v1
+        with:
+            dotnet-version: $USE_DOTNET-VERSION # SDK Version to use.
         run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
 
 
