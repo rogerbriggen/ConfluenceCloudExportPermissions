@@ -5,9 +5,6 @@ on: [push]
 jobs:
   build:
     name: build
-    env: 
-     USE_DOTNET-VERSION: '3.1.100'
-     INPUT_DOTNET-VERSION: '3.1.100'
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
@@ -23,17 +20,11 @@ jobs:
       - name: Setup dotnet env
         uses: actions/setup-dotnet@v1
         with:
-            dotnet-version: ${{ env.USE_DOTNET-VERSION }} # SDK Version to use.
+            dotnet-version: '3.1.x' # SDK Version to use. x will use the latest version of the 3.1 channel
 
 
       - name: Build projects
-        uses: actions/setup-dotnet@v1
-        with:
-            dotnet-version: ${{ env.USE_DOTNET-VERSION }} # SDK Version to use.
-      - run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
-
-      - name: Run unit-tests
-        run: dotnet --version
+        run: dotnet build --configuration Release src/ConfluenceCloudExportPermission.sln
 
 
       - name: Run unit-tests
