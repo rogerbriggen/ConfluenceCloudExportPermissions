@@ -32,14 +32,28 @@ jobs:
       #- run: dotnet test --verbosity normal src/ConfluenceCloudExportPermission.sln
 
 
+      #see https://docs.microsoft.com/en-us/dotnet/core/rid-catalog for runtime ids
       - name: Publish for Win-x64 as SingleFile
         if: runner.os == 'Windows'
         run: dotnet publish --configuration Release --runtime win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true src/ConfluenceCloudExportPermission/ConfluenceCloudExportPermission.csproj
 
 
-      - name: Upload artifact
+      - name: Upload artifact for Win-x64 as SingleFile
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v1
         with:
-            name: RemoteIncrediBuild_Release_Win-x64
-            path: src\ConfluenceCloudExportPermission\bin\Release\netcoreapp3.1\win-x64\publish\
+            name: ConfluenceCloudExportPermission_Release_Win-x64
+            path: src/ConfluenceCloudExportPermission/bin/Release/netcoreapp3.1/win-x64/publish/
+
+
+      - name: Publish for linux-x64 as SingleFile
+        if: runner.os == 'Linux'
+        run: dotnet publish --configuration Release --runtime linux-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true src/ConfluenceCloudExportPermission/ConfluenceCloudExportPermission.csproj
+
+
+      - name: Upload artifact for linux-x64 as SingleFile
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v1
+        with:
+            name: ConfluenceCloudExportPermission_Release_Linux-x64
+            path: src/ConfluenceCloudExportPermission/bin/Release/netcoreapp3.1/linux-x64/publish/
