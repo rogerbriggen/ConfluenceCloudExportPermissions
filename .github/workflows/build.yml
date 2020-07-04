@@ -8,7 +8,6 @@ jobs:
     env: 
      INPUT_DOTNET-VERSION: '3.1.100'
      DOTNET-VERSION: '3.1.200'
-     dotnet-version: '3.1.101'
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
