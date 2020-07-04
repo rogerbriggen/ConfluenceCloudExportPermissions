@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     name: build
-    #env: INPUT_DOTNET-VERSION: '3.1.100'
+    env: INPUT_DOTNET-VERSION: '3.1.100'
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
@@ -27,8 +27,6 @@ jobs:
 
 
       - name: Run unit-tests
-        with:
-            dotnet-version: '3.1.100' # SDK Version to use.
         run: dotnet test --verbosity normal src/
       #- run: dotnet test --verbosity normal src/ConfluenceCloudExportPermission.sln
 
